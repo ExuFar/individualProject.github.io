@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('far1.jpg');
+  min-height: 100%;
+}
+a{
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+    <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+    <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="personalInfo.html" class="w3-bar-item w3-button">About Me</a>
+    <a href="tools.html" class="w3-bar-item w3-button">Tools</a>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+    <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+    <div class="w3-center">
+        
+        <h1 class="w3-xxxlarge w3-animate-bottom">THIS IS MY PERSONAL INFORMATION</h1>
+        <br>
+    </div>
+</header>
+
+<!-- About Me Section -->
+<!-- Page Content -->
+<div class="w3-main w3-padding-large">
+  
+    <!-- Header -->
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+      <h1 class="w3-jumbo"><b>FARIHIN SALEH</b></h1>
+      <h4>COMPUTER SCIENCE STUDENT</h4>
+    </header>
+  
+    <!-- Portfolio Section -->
+    <div class="w3-padding-32 w3-content" id="portfolio">
+      <h2 class="w3-text-grey">My Picture</h2>
+      <hr class="w3-opacity">
+  
+      <!-- Grid for photos -->
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half">
+          <img src="image/far3.jpg" style="width:100%">
+          <img src="image/far4.jpg" style="width:100%">
+          <img src="image/lis.jpg" style="width:100%">
+        </div>
+  
+        <div class="w3-half">
+          <img src="image/far2.jpg" style="width:97.5%">
+          <img src="image/fam.jpg" style="width:97.5%">
+        </div>
+      <!-- End photo grid -->
+      </div>
+    <!-- End Portfolio Section -->
+    </div>
+  
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+      <h2>About Me</h2>
+      <hr class="w3-opacity">
+    <p>
+        Hi guys! <br>
+        My name is Muhammad Farihin Bin Saleh <br> And I am A Student At UTMKL <br>
+        Diploma in Computer Science <br>
+        <b>Program/Section: </b> DDWD Section 40 <br>
+        <b>Matric Number: </b> A22DW0393 <br>
+    </p>
+        
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-photo"></i> <a href="image/FarihinSalehResume.pdf" target="_blank">View CV</a>
+    </button>
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-download"></i> <a href="image/FarihinSalehResume.pdf" download>Download CV</a>
+    </button>
+      
+      <h3 class="w3-padding-16">My Hobby</h3>
+      <p class="w3-wide">SPORTS</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide">STUDY</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:70%">70%</div>
+      </div>
+      <p class="w3-wide">GAMING</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:60%">60%</div>
+      </div><br>
+  
+      
+    </div>
+
+    <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+        <h2>I went to these school</h2>
+        <hr class="w3-opacity">
+        <table class="w3-table-all w3-hoverable">
+            <tr>
+                <th>No</th>
+                <th>School</th>
+                <th>Year</th>
+                <th>Logo</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sekolah Kebangsaan 1 Selayang Baru </td>
+                <td>2011</td>
+                <td><img src="image/srksb1.jpeg" alt="logo sekolah 1" width="200px" height="200px"></td>
+                <td><a href="https://ms.wikipedia.org/wiki/Sekolah_Kebangsaan_(1)_Selayang_Baru" target="_blank">Wikipedia</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sekolah Men Kebangsaan Darul Ehsan </td>
+                <td>2017</td>
+                <td><img src="image/smkde2.jpeg" alt="logo sekolah 2" width="200px" height="200px"></td>
+                <td><a href="https://ms.wikipedia.org/wiki/Sekolah_Menengah_Kebangsaan_Darul_Ehsan" target="_blank">Wikipedia</a></td>
+            </tr>
+        </table>
+    </div>
+    
+  <!-- END PAGE CONTENT -->
+</div>
+
+<hr>
+
+<script>
+    // Side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "100%";
+        x.style.fontSize = "40px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

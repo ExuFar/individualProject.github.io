@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tools</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style>
+    table.center {
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    /* Styles for calculator */
+    .calculator {
+        width: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .calculator input[type="button"] {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+    }
+    .calculator input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 20px;
+    }
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", serif} 
+    
+</style>
+<script>
+    // Side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "100%";
+        x.style.fontSize = "40px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+    //SIMPLE CALCULATOR
+    function addToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+    function calculate() {
+        try {
+            var result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+
+    //BMI CHECKER
+    function calculateBMI() {
+        var height = parseFloat(document.getElementById("height").value);
+        var weight = parseFloat(document.getElementById("weight").value);
+        
+        if (!isNaN(height) && !isNaN(weight) && height > 0 && weight > 0) {
+            var bmi = weight / ((height / 100) * (height / 100));
+            var result = "Your BMI is: " + bmi.toFixed(2) + "<br>";
+            if (bmi < 18.5) {
+                result += "Underweight";
+            } else if (bmi < 25) {
+                result += "Normal weight";
+            } else if (bmi < 30) {
+                result += "Overweight";
+            } else {
+                result += "Obesity";
+            }
+            document.getElementById("result").innerHTML = result;
+            alert(result);
+        } else {
+            document.getElementById("result").innerHTML = "Please enter valid height and weight values.";
+        }
+    }
+
+    //ZAKAT CALCULATOR
+    function calculateZakat(){
+        let income = parseFloat(document.getElementById("income").value);
+        let Zakat = income * 0.025;
+        document.getElementById("Zakat").innerHTML= "The amount you have to pay is "+Zakat.toFixed(2);
+        alert( "Zakat is "+Zakat.toFixed(2));
+    }
+
+    //UNIT CONVERTER
+    function calculateUnit(btn) {
+        let unit = parseFloat(document.getElementById("unit").value);
+        let resultUnit ;
+        let symbol;
+
+        switch(btn.value){
+            case 'Cm to Metre':
+                resultUnit = unit * 0.01; 
+                symbol = " m";
+                break;
+
+            case 'Metre to Cm':
+                resultUnit = unit * 100;
+                symbol = " cm";
+                break;
+
+            case 'Metre to Km':
+                resultUnit = unit * 0.001;
+                symbol = " km"
+                break;
+
+            case 'Km to Metre':
+                resultUnit = unit * 1000;
+                symbol = " m";
+                break;
+
+            case 'Celcius to Fahrenheit':
+                resultUnit = unit * 1.8 + 32;
+                symbol = "°F"
+                break;
+                    
+                }
+                alert("Your answer : "+resultUnit+symbol);
+                document.getElementById("resultUnit").innerHTML = "Your answer : "+resultUnit+symbol;
+            }
+            function clearUnit() {
+                document.getElementById("unit").value = "";
+                document.getElementById("resultUnit").innerHTML = "Result will be here...";
+            }
+
+</script>
+
+</head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+    <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+    <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="personalInfo.html" class="w3-bar-item w3-button">About Me</a>
+    <a href="tools.html" class="w3-bar-item w3-button">Tools</a>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+    <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+    <div class="w3-center">
+        <h1 class="w3-xxxlarge w3-animate-bottom">TOOLS</h1>
+        <br>
+    </div>
+</header>
+
+<!-- Calculator Section -->
+<section class="w3-container w3-center w3-margin-top">
+    <div class="w3-card w3-container" style="min-height:270px">
+        <h2><b>Simple Calculator</b></h2><br>
+        <input type="text" id="display" disabled>
+        <br><br>
+        <table class="center">
+            <tr>
+                <td><input type="button" value="7" onclick="addToDisplay('7')"></td>
+                <td><input type="button" value="8" onclick="addToDisplay('8')"></td>
+                <td><input type="button" value="9" onclick="addToDisplay('9')"></td>
+                <td><input type="button" value="/" onclick="addToDisplay('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="addToDisplay('4')"></td>
+                <td><input type="button" value="5" onclick="addToDisplay('5')"></td>
+                <td><input type="button" value="6" onclick="addToDisplay('6')"></td>
+                <td><input type="button" value="*" onclick="addToDisplay('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="addToDisplay('1')"></td>
+                <td><input type="button" value="2" onclick="addToDisplay('2')"></td>
+                <td><input type="button" value="3" onclick="addToDisplay('3')"></td>
+                <td><input type="button" value="-" onclick="addToDisplay('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" onclick="clearDisplay()"></td>
+                <td><input type="button" value="0" onclick="addToDisplay('0')"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+                <td><input type="button" value="+" onclick="addToDisplay('+')"></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- BMI Checker Section -->
+<section class="w3-container w3-center w3-margin-top">
+    <div class="w3-card w3-container" style="min-height:270px">
+        <h2><b>BMI Calculator</b></h2><br>
+
+        <label>Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter your height" required><br><br>
+        <label>Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter your weight" required><br><br>
+        <button class="w3-button w3-theme" onclick="calculateBMI()">Calculate BMI</button><br><br>
+        <div id="result">Result Will be Here!</div>
+    </div>
+</section>
+
+<!-- Zakat Calculator Section -->
+<section class="w3-container w3-center w3-margin-top">
+    <div class="w3-card w3-container" style="min-height:180px">
+        <h2><b>Zakat Calculator</b></h2>
+        
+        <input type="number" id="income" placeholder="Enter Yearly Income"><br><br>
+        <button class="w3-button w3-theme" onclick="calculateZakat()">Calculate Zakat</button><br><br>
+        <div id="Zakat">Result will be here...</div>
+    </div>
+</section>
+
+<!-- Unit Converter Section -->
+<section class="w3-container w3-center w3-margin-top">
+    <div class="w3-card w3-container" style="min-height:270px">
+        <h2><b>Unit Converter</b></h2>
+    <div >
+        <input type="number" id="unit" placeholder="Enter value" step="0.01"><br><br>
+        <input type="button" value="Cm to Metre" onclick="calculateUnit(this)">
+        <input type="button" value="Metre to Cm" onclick="calculateUnit(this)">
+        <input type="button" value="Metre to Km" onclick="calculateUnit(this)">
+        <input type="button" value="Km to Metre" onclick="calculateUnit(this)">
+        <input type="button" value="Celcius to Fahrenheit" onclick="calculateUnit(this)">
+        <br><br><input type="reset" value="Clear" onclick="clearUnit()">
+        <br><br><div id="resultUnit">Result will be here...</div>
+    </div>
+    </div>
+</section>
+
+<hr>
+
+<script>
+    
+</script>
+
+</body>
+</html>

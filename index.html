@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", serif}
+  body{
+    background-color: black;
+    
+  }
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .intro {
+    max-width: 50%;
+    padding: 20px;
+    margin-left: 200px;
+  }
+
+  .intro h3 {
+    font-size: 34px;
+    color: azure;
+  }
+  .intro h1 {
+    font-size: 74px;
+    color: aliceblue;
+  }
+
+  .intro p {
+    font-size: 20px;
+    color: #666;
+  }
+  .intro span {
+    color: darkviolet;
+  }
+
+  .profile-pic {
+    margin-left: 100px ;
+    max-width: 27%;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="index.html" class="w3-bar-item w3-button">Home</a>
+  <a href="personalInfo.html" class="w3-bar-item w3-button">About Me</a>
+  <a href="tools.html" class="w3-bar-item w3-button">Tools</a>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <!--<h1 class="w3-xxxlarge w3-animate-bottom">WELCOME TO MY PERSONAL WEBSITE</h1>-->
+  <br>
+  </div>
+</header>
+
+<div class="w3-row-padding w3-center w3-margin-top">
+  <div class="container">
+    <div class="intro">
+      <h3>- Hello There!</h3>
+      <h1>I'm <span>Farihin Saleh</span></h1>
+      <p>Welcome to my personal website</p>
+      <br><a href="personalInfo.html" class="w3-bar-item w3-button"><span>Click to know more about me</span></a>
+    </div>
+    <img src="image/far6.jpg" alt="ChatGPT" class="profile-pic">
+  </div>
+</div>
+
+
+<script>
+    // Side navigation
+    function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "100%";
+    x.style.fontSize = "40px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
